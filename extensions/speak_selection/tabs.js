@@ -30,10 +30,12 @@ function loadContentScriptInAllTabs() {
       for (var j = 0; j < tabs.length; j++) {
         chrome.tabs.executeScript(
           tabs[j].id,
-          { file: 'keycodes.js', allFrames: true });
+          { file: 'keycodes.js', allFrames: true }, 
+            _=>chrome.runtime.lastError /* "check" error by reading lastError variable */);
         chrome.tabs.executeScript(
           tabs[j].id,
-          { file: 'content_script.js', allFrames: true });
+          { file: 'content_script.js', allFrames: true }, 
+            _=>chrome.runtime.lastError /* "check" error by reading lastError variable*/);
       }
     }
   });
