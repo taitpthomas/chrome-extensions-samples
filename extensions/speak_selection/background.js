@@ -80,4 +80,5 @@ function initBackground() {
       });
 }
 
+console.log('calling initBackground')
 initBackground();

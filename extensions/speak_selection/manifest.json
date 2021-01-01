@@ -5,14 +5,25 @@
   "permissions": [
     "<all_urls>",
     "tts",
-    "tabs"
+    "tabs",
+    "ttsEngine"
   ],
 
   "background": {
     "scripts": [
       "keycodes.js",
       "tabs.js",
+      "console_tts_engine.js",
       "background.js"
+    ]
+  },
+
+  "tts_engine": {
+    "voices": [
+      {
+        "voice_name": "Console",
+        "event_types": ["start", "word", "sentence", "end"]
+      }
     ]
   },
 
